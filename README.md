@@ -1,5 +1,5 @@
-## What is single-shard-redis-cluster-client?
-single-shard-redis-cluster-client is a Redis wrapper Java API on top of Jedis 2.6  This API connects to many clusters in parallel, where each cluster 
+## What is multi-shard-redis-cluster-client?
+multi-shard-redis-cluster-client is a Redis wrapper Java API on top of Jedis 2.6  This API connects to many clusters in parallel, where each cluster 
 has a single master and multiple slaves running in ACTIVE mode. This API routes write requests to the masters and read requests to the slaves, thus 
 distributing the load between master and slaves
 
