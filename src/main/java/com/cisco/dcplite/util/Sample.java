@@ -28,7 +28,7 @@ public class Sample {
 			writeTransaction.set("TestKey1", "TestValue");
 			writeTransaction.set("TestKey2", "TestValue");
 			//put all the operations for the row in a single transactions
-			
+
 			writeTransaction.exec();
 			System.out.println("Set TestKey1");
 		} catch (Exception e) {
@@ -37,19 +37,17 @@ public class Sample {
 			inMemCon.returnWriteResource("content-listing-cluster", writeRes);//return the connection back to the pool
 		}
 
-		for(int i=0; i<10;i++){
-			//Sample read operation
-			ReadResource readRes = inMemCon.getReadResource("content-listing-cluster");//borrow a connection from a clusterId
-			try {
-				String value = readRes.getSlaveResource().get("TestKey1");
-				System.out.println("Read value :"+value);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}finally{
-				inMemCon.returnReadResource("content-listing-cluster", readRes);//return the connection back to the pool
-			}
-
+		//Sample read operation
+		ReadResource readRes = inMemCon.getReadResource("content-listing-cluster");//borrow a connection from a clusterId
+		try {
+			String value = readRes.getSlaveResource().get("TestKey1");
+			System.out.println("Read value :"+value);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			inMemCon.returnReadResource("content-listing-cluster", readRes);//return the connection back to the pool
 		}
+
 	}
 
 }
