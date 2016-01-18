@@ -16,7 +16,7 @@ Connection to many such clusters can be maintained by this API.
 
 3> Enter the Redis Hosts and ports details in srcc_en_US.properties which is found at src/main/resources, group different masters under different cluster names.
 
-4> Simply consume SRCC using a Java code like:
+4> Simply consume util using a Java code like:
 
 ```java
 	InMemoryDSConnection inMemCon = InMemoryConnectionUtil.getInstance();
