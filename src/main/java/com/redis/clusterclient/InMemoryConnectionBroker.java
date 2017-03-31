@@ -1,4 +1,4 @@
-package com.cisco.dcplite.util;
+package com.redis.clusterclient.util;
 
 import java.util.HashMap;
 import java.util.Map;
